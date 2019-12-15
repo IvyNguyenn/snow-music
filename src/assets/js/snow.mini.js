@@ -8,7 +8,14 @@ const snowcolor = new Array(
     "#ffffff"
 ); // Mau sac cac hat tuyet roi
 
-const snowtype = new Array("Times", "Arial", "Times", "Verdana");
+const snowtype = new Array(
+    "Times",
+    "Arial",
+    "Times",
+    "Verdana",
+    "Norican",
+    "Yesteryear"
+);
 const snowletter = "*";
 const sinkspeed = 0.3;
 const snowmaxsize = 50;
@@ -29,7 +36,7 @@ const ns6 = document.getElementById && !document.all;
 const opera = browserinfos.match(/Opera/);
 const browserok = ie5 || ns6 || opera;
 function randommaker(range) {
-    rand = Math.floor(range * Math.random());
+    let rand = Math.floor(range * Math.random());
     return rand;
 }
 export function initsnow() {
@@ -41,7 +48,7 @@ export function initsnow() {
         marginright = window.innerWidth - 15;
     }
     const snowsizerange = snowmaxsize - snowminsize;
-    for (i = 0; i <= snowmax; i++) {
+    for (let i = 0; i <= snowmax; i++) {
         crds[i] = 0;
         lftrght[i] = Math.random() * 15;
         x_mv[i] = 0.03 + Math.random() / 10;
@@ -75,7 +82,7 @@ export function initsnow() {
     movesnow();
 }
 function movesnow() {
-    for (i = 0; i <= snowmax; i++) {
+    for (let i = 0; i <= snowmax; i++) {
         crds[i] += x_mv[i];
         snow[i].posy += snow[i].sink;
         snow[i].style.left = `${snow[i].posx +
@@ -106,7 +113,7 @@ function movesnow() {
     }
     const timer = setTimeout("movesnow()", 30);
 }
-for (i = 0; i <= snowmax; i++) {
+for (let i = 0; i <= snowmax; i++) {
     document.write(
         `<span id='s${i}' style='position:absolute;top:-${snowmaxsize}'>${snowletter}</span>`
     );

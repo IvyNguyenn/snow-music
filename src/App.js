@@ -11,10 +11,12 @@ class App extends React.PureComponent {
         this.state = {
             snowPileHeight: 40,
             playingSong: 0,
+            playing: true,
         };
     }
     componentDidMount() {
         initsnow();
+        this.setState({ playing: true });
     }
 
     hideSnowPile = () => {
@@ -34,8 +36,12 @@ class App extends React.PureComponent {
             this.setState({ playingSong: playingSong + 1 });
         }
     };
+
+    handleReadyPlay = () => {
+        this.setState({ playing: true });
+    };
     render() {
-        const { playingSong, snowPileHeight } = this.state;
+        const { playingSong, playing, snowPileHeight } = this.state;
         return (
             <div className="app-root">
                 <small className="author-name">
@@ -44,11 +50,9 @@ class App extends React.PureComponent {
                 <ReactPlayer
                     className="player-wrapper"
                     url={playList[playingSong]}
-                    volume
+                    playing={playing}
                     controls
-                    playing
-                    playsinline
-                    progressInterval={0}
+                    onReady={this.handleReadyPlay}
                     onEnded={this.handleEndSong}
                 />
                 <img src={images.snowPile} className="snow-pile-bottom" />
