@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.scss";
+import { initsnow } from "./components/snow";
+import ReactPlayer from "react-player";
+import { images } from "./assets";
+import { audios, playList } from "./assets";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    initsnow();
+    return (
+        <div className="app-root">
+            <small className="author-name">
+                Hoang Vy Nguyen wishes you a Merry Christmas!
+            </small>
+            <ReactPlayer
+                className="player-wrapper"
+                url={playList}
+                controls
+                loop
+                playing
+            />
+            <img
+                src={images.snowPile}
+                className="snow-pile-bottom"
+                style={{ height: "40%" }}
+            />
+        </div>
+    );
 }
 
 export default App;
