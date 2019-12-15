@@ -2,13 +2,47 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: black;
+    background: #000000; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        #000000,
+        #1f1f1f
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        #000000,
+        #1f1f1f
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     .snow-pile-bottom {
         position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;
         transition: ease 1s;
+        -webkit-animation-name: full-snow; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 65s; /* Safari 4.0 - 8.0 */
+        animation-name: full-snow;
+        animation-duration: 65s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes full-snow {
+        from {
+            height: 0%;
+        }
+        to {
+            height: 50%;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes full-snow {
+        from {
+            height: 0%;
+        }
+        to {
+            height: 50%;
+        }
     }
     .player-wrapper {
         position: absolute;
@@ -21,8 +55,17 @@
     }
     .author-name {
         color: white;
+        font-size: 15px;
         font-style: italic;
-        font-family: "Yesteryear", cursive;
+        font-family: "Norican", cursive;
         margin: 20px 10px;
+    }
+    .bottom-control {
+        position: absolute;
+        z-index: 10;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        padding: 10px;
     }
 }
