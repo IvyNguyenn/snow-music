@@ -52,11 +52,12 @@ class App extends React.PureComponent {
                     onEnded={this.handleEndSong}
                 />
                 <img src={images.snowPile} className="snow-pile-bottom" />
-                {/* <div className="bottom-control">
-                    <button onClick={this.hideSnowPile}>
+                <div className="bottom-control">
+                    {/* <button onClick={this.hideSnowPile}>
                         Toggle Snow Pile
-                    </button>
-                </div> */}
+                    </button> */}
+                    <button onClick={this.handleEndSong}>Next</button>
+                </div>
             </div>
         );
     }
