@@ -42,10 +42,10 @@ function randommaker(range) {
 export function initsnow() {
     if (ie5 || opera) {
         marginbottom = document.body.scrollHeight;
-        marginright = document.body.clientWidth - 15;
+        marginright = document.body.clientWidth - 20;
     } else if (ns6) {
         marginbottom = document.body.scrollHeight;
-        marginright = window.innerWidth - 15;
+        marginright = window.innerWidth - 20;
     }
     const snowsizerange = snowmaxsize - snowminsize;
     for (let i = 0; i <= snowmax; i++) {
@@ -111,6 +111,7 @@ function movesnow() {
             snow[i].posy = 0;
         }
     }
+    console.log(marginright);
     const timer = setTimeout("movesnow()", 30);
 }
 for (let i = 0; i <= snowmax; i++) {
@@ -118,6 +119,6 @@ for (let i = 0; i <= snowmax; i++) {
         `<span id='s${i}' style='position:absolute;top:-${snowmaxsize}'>${snowletter}</span>`
     );
 }
-if (browserok) {
-    window.onload = initsnow;
-}
+// if (browserok) {
+//     window.onload = initsnow;
+// }

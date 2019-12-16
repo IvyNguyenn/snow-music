@@ -46,7 +46,7 @@
     }
     .player-wrapper {
         position: absolute;
-        z-index: 10;
+        z-index: 100;
         bottom: 0;
         right: 0;
         width: 50% !important;
@@ -60,9 +60,65 @@
         font-family: "Norican", cursive;
         margin: 20px 10px;
     }
+    .full-moon-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 12vw;
+        height: 12vw;
+        background-image: url("./assets/images/full-moon.png");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 3% 15%;
+        border-radius: 100%;
+        -webkit-box-shadow: 0px 2px 15px 5px rgb(255, 255, 255);
+        -moz-box-shadow: 0px 2px 15px 5px rgb(255, 255, 255);
+        box-shadow: 0px 2px 15px 5px rgb(255, 255, 255);
+    }
+    .reindeer-santa-claus-img {
+        position: absolute;
+        z-index: 3;
+        width: 9vw;
+        -webkit-animation-name: reindeer-move; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 60s; /* Safari 4.0 - 8.0 */
+        animation-name: reindeer-move;
+        animation-duration: 60s;
+        animation-iteration-count: infinite;
+        animation-direction: initial;
+    }
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes reindeer-move {
+        from {
+            top: 150px;
+            left: 70px;
+            -webkit-transform: rotate(0deg);
+        }
+        to {
+            top: 40px;
+            left: 400px;
+            -webkit-transform: rotate(10deg);
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes reindeer-move {
+        from {
+            top: 150px;
+            left: 70px;
+            -ms-transform: rotate(0deg); /* IE 9 */
+            transform: rotate(0deg);
+        }
+        to {
+            top: 40px;
+            left: 400px;
+            -ms-transform: rotate(10deg); /* IE 9 */
+            transform: rotate(10deg);
+        }
+    }
     .bottom-control {
         position: absolute;
-        z-index: 10;
+        z-index: 100;
         bottom: 0;
         left: 0;
         width: 50%;

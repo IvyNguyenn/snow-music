@@ -55,6 +55,11 @@ class App extends React.PureComponent {
                     onReady={this.handleReadyPlay}
                     onEnded={this.handleEndSong}
                 />
+                <img
+                    src={images.reindeerSantaClaus}
+                    className="reindeer-santa-claus-img"
+                />
+                <div className="full-moon-img" />
                 <img src={images.snowPile} className="snow-pile-bottom" />
                 <div className="bottom-control">
                     {/* <button onClick={this.hideSnowPile}>

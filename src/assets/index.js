@@ -1,6 +1,8 @@
 export const images = {
     snowPile: require("./images/snow-pile.png"),
     cherryBlossom: require("./images/cherry-blossom.jpg"),
+    fullMoon: require("./images/full-moon.png"),
+    reindeerSantaClaus: require("./images/reindeer-santa-claus.png"),
 };
 
 export const audios = {
