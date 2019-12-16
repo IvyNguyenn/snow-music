@@ -3,7 +3,7 @@ import "./App.scss";
 import { initsnow } from "./components/snow";
 import ReactPlayer from "react-player";
 import { images } from "./assets";
-import { audios, playList } from "./assets";
+import { playList } from "./assets";
 
 class App extends React.PureComponent {
     constructor(props) {
@@ -41,7 +41,7 @@ class App extends React.PureComponent {
         this.setState({ playing: true });
     };
     render() {
-        const { playingSong, playing, snowPileHeight } = this.state;
+        const { playingSong, playing } = this.state;
         return (
             <div className="app-root">
                 <small className="author-name">
