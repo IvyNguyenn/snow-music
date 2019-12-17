@@ -62,15 +62,14 @@
     }
     .full-moon-img {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 10%;
+        left: 20%;
         width: 12vw;
         height: 12vw;
         background-image: url("./assets/images/full-moon.png");
         background-size: 110%;
         background-repeat: no-repeat;
         background-position: center;
-        margin: 3% 15%;
         border-radius: 100%;
         -webkit-box-shadow: 0px 2px 15px 5px rgb(255, 255, 255);
         -moz-box-shadow: 0px 2px 15px 5px rgb(255, 255, 255);
@@ -79,7 +78,7 @@
     .reindeer-santa-claus-img {
         position: absolute;
         z-index: 3;
-        width: 9vw;
+        width: 10vw;
         -webkit-animation-name: reindeer-move; /* Safari 4.0 - 8.0 */
         -webkit-animation-duration: 60s; /* Safari 4.0 - 8.0 */
         animation-name: reindeer-move;
@@ -90,13 +89,13 @@
     /* Safari 4.0 - 8.0 */
     @-webkit-keyframes reindeer-move {
         from {
-            top: 150px;
-            left: 70px;
+            top: 50%;
+            left: -90%;
             -webkit-transform: rotate(0deg);
         }
         to {
-            top: 40px;
-            left: 400px;
+            top: 15%;
+            left: 115%;
             -webkit-transform: rotate(10deg);
         }
     }
@@ -104,16 +103,16 @@
     /* Standard syntax */
     @keyframes reindeer-move {
         from {
-            top: 150px;
-            left: 70px;
-            -ms-transform: rotate(0deg); /* IE 9 */
-            transform: rotate(0deg);
+            top: 50%;
+            left: -90%;
+            -ms-transform: rotate(-5deg); /* IE 9 */
+            transform: rotate(-5deg);
         }
         to {
-            top: 40px;
-            left: 400px;
-            -ms-transform: rotate(10deg); /* IE 9 */
-            transform: rotate(10deg);
+            top: 15%;
+            left: 115%;
+            -ms-transform: rotate(20deg); /* IE 9 */
+            transform: rotate(20deg);
         }
     }
     .bottom-control {
@@ -123,5 +122,16 @@
         left: 0;
         width: 50%;
         padding: 10px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .full-moon-img {
+            top: 12%;
+            width: 25vw;
+            height: 25vw;
+        }
+        .reindeer-santa-claus-img {
+            width: 20vw;
+        }
     }
 }
